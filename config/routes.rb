@@ -1,6 +1,10 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
-  match '/contact', to:'pages#contact', via: 'get'
+  get '/contact', to:'pages#contact'
+  match '/send_mail', to: 'pages#send_mail', via: 'post'
   root 'pages#contact'
+  mount Sidekiq::Web, at: '/sidekiq'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

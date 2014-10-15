@@ -15,12 +15,13 @@ gem 'sidekiq'
 group :development do
   gem 'spring'
   gem 'letter_opener'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :test do
-  gem 'better_errors'
-  gem 'binding_of_caller'
   gem 'launchy'
+  gem 'minitest-rails'
 end
 
 group :development, :test do

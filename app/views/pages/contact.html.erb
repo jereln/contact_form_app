@@ -1,6 +1,6 @@
 <h1>Contact us!</h1>
 
-<%= form_tag("/contact", method: "post") do %>
+<%= form_tag(send_mail_path, method: "post") do %>
   <%= label_tag (:name)%>
   <%= text_field_tag (:name)%><br>
 
@@ -11,3 +11,4 @@
   <%= text_area_tag (:message)%><br>
 
   <%= submit_tag("Send")%>
+  <% end %>
